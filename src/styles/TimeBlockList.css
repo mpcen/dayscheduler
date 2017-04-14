@@ -1,0 +1,14 @@
+.TimeBlockList ul {
+	position: relative;
+}
+
+.TimeBlockList ul:after {
+	content: '';
+	width: 0;
+	background: green;
+	height: 100%;
+	position: absolute;
+	left: 100px;
+	top: 0;
+	border: 1px solid black;
+}

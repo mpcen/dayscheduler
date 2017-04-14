@@ -1,10 +1,9 @@
 import React from 'react';
 import TimeBlock from './TimeBlock';
+import '../styles/TimeBlockList.css';
 
 const TimeBlockList = ({timeBlocks}) => {
 	function renderTimeBlocks(timeBlocks) {
-		if(!timeBlocks.length) return <li>wtf</li>;
-
 		return timeBlocks.map((timeBlock, index) => {
 			return (
 				<TimeBlock key={index} timeBlock={timeBlock} />
@@ -13,7 +12,7 @@ const TimeBlockList = ({timeBlocks}) => {
 	}
 
 	return (
-		<div>
+		<div className="TimeBlockList">
 			<ul>
 				{renderTimeBlocks(timeBlocks)}
 			</ul>

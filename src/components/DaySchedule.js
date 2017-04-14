@@ -64,9 +64,7 @@ class DaySchedule extends Component {
 
 	render() {
 		return (
-			<div>
-				<TimeBlockList timeBlocks={this.state.timeBlocks} />
-			</div>
+			<TimeBlockList timeBlocks={this.state.timeBlocks} />
 		);	
 	}
 }

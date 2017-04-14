@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import '../styles/DayHeader.css';
 
 const DayHeader = ({date}) => {
 	function formatDate(date) {
@@ -7,7 +8,7 @@ const DayHeader = ({date}) => {
 	}
 
 	return (		
-		<div>
+		<div className="DayHeader-Container">
 			{formatDate(date)}
 		</div>
 	);
