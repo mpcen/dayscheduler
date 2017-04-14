@@ -1,16 +1,16 @@
 import React from 'react';
 import moment from 'moment';
 
-const DateHeader = ({date}) => {
+const DayHeader = ({date}) => {
 	function formatDate(date) {
 		return moment(date, "ddd MMM D YYYY").format("dddd, MMMM D, YYYY")
 	}
 
 	return (		
 		<div>
-			<h1>{formatDate(date)}</h1>
+			{formatDate(date)}
 		</div>
 	);
 }
 
-export default DateHeader;
+export default DayHeader;

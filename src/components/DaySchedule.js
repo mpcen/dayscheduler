@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+import TimeBlockList from './TimeBlockList';
 
-class Schedule extends Component {
+class DaySchedule extends Component {
 	constructor(props) {		
 		super(props);
 
@@ -62,11 +63,12 @@ class Schedule extends Component {
 	}
 
 	render() {
-		console.log(this.state);
 		return (
-			<div></div>
+			<div>
+				<TimeBlockList timeBlocks={this.state.timeBlocks} />
+			</div>
 		);	
 	}
 }
 
-export default Schedule;
+export default DaySchedule;

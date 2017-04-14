@@ -1,12 +1,12 @@
 import React from 'react';
-import DateHeader from './DateHeader';
-import Schedule from './Schedule';
+import DayHeader from './DayHeader';
+import DaySchedule from './DaySchedule';
 
 const Day = (props) => {
 	return (
 		<div>
-			<DateHeader date={props.eventData.date} />
-			<Schedule
+			<DayHeader date={props.eventData.date} />
+			<DaySchedule
 				prescheduledEvents={props.eventData.events}
 				date={props.eventData.date}
 			/>
