@@ -1,11 +1,10 @@
 .TimeBlock {
 	display: flex;
-	position: relative;
-	/*float: left;*/
+	height: 46px;
 }
 
 .TimeBlock .time-container {
-	margin-right: 36px;
+	margin-right: 37px;
 	width: 25px;
 }
 
@@ -14,6 +13,7 @@
 }
 
 .TimeBlock.minute-30 {
+	/*border-top: 1px dotted rgba(223,224,226,0.8);*/
 	border-top: 1px dotted black;
 }
 
@@ -28,12 +28,28 @@
 	width: 100%;
 }
 
-.TimeBlock .event-content {
-	background: #e2e2e2;
+.TimeBlock .event {
 	width: 200px;
+	margin-right: 10px;
+}
+
+.TimeBlock .event-start {
+	border-top-right-radius: 10px;
+}
+
+.TimeBlock .event-end {
+
+}
+
+.TimeBlock .event-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #DFE0E2;
+	border-left: 5px solid #23B5D3;
+	color: #4C5760;
 }
 
 .TimeBlock .empty-event {
 	background: #fff;
-	width: 200px;
 }

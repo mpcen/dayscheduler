@@ -5,7 +5,6 @@
 .TimeBlockList ul:after {
 	content: '';
 	width: 0;
-	background: green;
 	height: 100%;
 	position: absolute;
 	clear: both;
