@@ -7,14 +7,18 @@ const TimeBlock = ({timeBlock}) => {
 	let minute = `minute-${moment(timeBlock.time).format('mm').toString()}`;
 	let timeBlockClass = `TimeBlock ${minute}`;
 
-	function renderEvents(timeBlock) {		
+	function renderTimeBlock(timeBlock) {		
 		if(timeBlock.events.length) {
 			return timeBlock.events.map((event, index) => {
-				return (
-					<div key={index} className="event-content">
-						<span>{event.title}</span>
-					</div>
-				);
+				if(!event.title) {
+					return <div key={index} className="empty-event"></div>
+				} else {
+					return (
+						<div key={index} className="event-content">
+							<span>{event.title}</span>
+						</div>
+					);
+				}
 			});
 		}
 	}
@@ -28,7 +32,7 @@ const TimeBlock = ({timeBlock}) => {
 			</div>
 
 			<div className="event-list">
-				{renderEvents(timeBlock)}
+				{renderTimeBlock(timeBlock)}
 			</div>
 		</li>
 	);
