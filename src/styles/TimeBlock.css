@@ -1,6 +1,6 @@
 .TimeBlock {
 	display: flex;
-	height: 24px;
+	height: 32px;	
 }
 
 .TimeBlock .time-container {
@@ -45,8 +45,7 @@
 	background: rgba(223,224,226, 0.9);
 	border-left: 5px solid #23B5D3;
 	color: #4C5760;
-	position: relative;
-	z-index: 99;
+	z-index: 1;
 }
 
 .TimeBlock .empty-event {

@@ -35,6 +35,14 @@ class DaySchedule extends Component {
 			});
 
 		//process any events that were predefined from an external source (ex: included json file)
+		prescheduledEvents.sort((eventA, eventB) => {
+			if(Number(eventA.end.replace(':', '.')) === Number(eventB.end.replace(':', '.'))) {
+				return Number(eventA.start.replace(':', '.')) - Number(eventB.start.replace(':', '.'));
+			}
+			return Number(eventA.end.replace(':', '.')) - Number(eventB.end.replace(':', '.'));
+		})
+
+
 		prescheduledEvents.forEach(preScheduledEvent => {
 			const
 				eventStart = moment(preScheduledEvent.start, 'HH:mm'),

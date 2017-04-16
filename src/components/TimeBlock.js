@@ -8,7 +8,6 @@ const TimeBlock = ({timeBlock}) => {
 	let timeBlockClass = `TimeBlock ${minute}`;
 
 	function renderTimeBlock(timeBlock) {
-		console.log(timeBlock)
 		if(timeBlock.events.length)			
 			return timeBlock.events.map((event, index) => {
 				if(!event.title)
@@ -25,9 +24,7 @@ const TimeBlock = ({timeBlock}) => {
 					);
 				} else {
 					return (
-						<div key={index} className="event empty-event">
-
-						</div>
+						<div key={index} className="event empty-event"></div>
 					);
 				}
 			});
