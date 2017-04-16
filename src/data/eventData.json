@@ -20,7 +20,7 @@
             "title": "Lunch with Carol",
             "start": "12:00",
             "end": "13:00"
-        },        
+        },
         {
             "title": "Meeting 1",
             "start": "14:00",
@@ -40,6 +40,6 @@
             "title": "Drinks With Dan",
             "start": "18:00",
             "end": "19:00"
-        }
+        }     
     ]
 }

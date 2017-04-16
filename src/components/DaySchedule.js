@@ -20,6 +20,7 @@ class DaySchedule extends Component {
 			year = startOfDay.split(" ")[2],
 			timeBlocks = [];
 
+		// generate a timeblock for each 15 minute block in a day
 		for(let minElapsed = 0; minElapsed < 1440; minElapsed += 15)
 			timeBlocks.push({
 				time: moment()
@@ -30,7 +31,6 @@ class DaySchedule extends Component {
 					.minutes(minElapsed)
 					.seconds(0)
 					.milliseconds(0),
-				eventScheduled: false,
 				events: []
 			});
 
@@ -43,27 +43,30 @@ class DaySchedule extends Component {
 				timeBlockIndex = timeBlocks.findIndex(timeBlock => {
 					return moment(timeBlock.time).format('HH:mm') === preScheduledEvent.start;
 				}),
-				eventsAtStart = timeBlocks[timeBlockIndex].events.length;
+				eventsAtStart = timeBlocks[timeBlockIndex].events.length;				
 
+				preScheduledEvent.eventDuration = eventDuration;
+
+			// for each timeblock in an event
 			for(let i = 0; i < eventDuration / 15; i++) {
-				timeBlocks[timeBlockIndex + i].eventScheduled = true;
+				// if an overlapped event has finished , store an empty event so 
+				// timeblocks remain vertically aligned. (a bit hacky but works)
+				if(timeBlocks[timeBlockIndex + i].events.length < eventsAtStart)
+					for(let j = 0; j < eventsAtStart; j++)
+						timeBlocks[timeBlockIndex + i].events.push({title: '', start: '', end: '', eventDuration: 0});
 
-				if(timeBlocks[timeBlockIndex + i].events.length < eventsAtStart) {
-					for(let j = 0; j < eventsAtStart - timeBlocks[timeBlockIndex + i].events.length; j++) {
-						timeBlocks[timeBlockIndex + i].events.push({title: '', start: '', end: ''});						
-					}
-				}
-
+				// store the actual event in the timeblock
 				timeBlocks[timeBlockIndex + i].events.push(preScheduledEvent);
-				
-				if(timeBlocks[timeBlockIndex + i].events.length > 1) {
+
+				// sort the timeblock in ascending order of start time.
+				if(timeBlocks[timeBlockIndex + i].events.length > 1)
 					timeBlocks[timeBlockIndex + i].events.sort((eventA, eventB) => {
 						return Number(eventA.start.replace(':', '.')) - Number(eventB.start.replace(':', '.'));
 					});
-				}
 			}
 		});
 
+		// set the state of the entire day
 		this.setState({ timeBlocks });		
 	}
 

@@ -8,20 +8,26 @@ const TimeBlock = ({timeBlock}) => {
 	let timeBlockClass = `TimeBlock ${minute}`;
 
 	function renderTimeBlock(timeBlock) {
+		console.log(timeBlock)
 		if(timeBlock.events.length)			
 			return timeBlock.events.map((event, index) => {
-				if(!event.title && !event.start && event.end)
+				if(!event.title)
 					return <div key={index} className="event empty-event"></div>
 
 				if(moment(timeBlock.time).format('HH:mm').toString() === event.start) {
 					return (
-						<div key={index} className="event event-start event-content">
+						<div
+							key={index}
+							className="event event-start event-content"
+							style={{height:`${event.eventDuration/15}00%`}}>
 							<span>{event.title}</span>
 						</div>
 					);
 				} else {
 					return (
-						<div key={index} className="event event-content"></div>
+						<div key={index} className="event empty-event">
+
+						</div>
 					);
 				}
 			});

@@ -1,6 +1,6 @@
 .TimeBlock {
 	display: flex;
-	height: 46px;
+	height: 24px;
 }
 
 .TimeBlock .time-container {
@@ -9,12 +9,12 @@
 }
 
 .TimeBlock.minute-00 {
-	border-top: 1px solid black;
+	border-top: 1px solid #DFE0E2;
+	color: #4C5760;
 }
 
 .TimeBlock.minute-30 {
-	/*border-top: 1px dotted rgba(223,224,226,0.8);*/
-	border-top: 1px dotted black;
+	border-top: 1px dotted #DFE0E2;
 }
 
 .TimeBlock.minute-15 .time-container,
@@ -30,24 +30,23 @@
 
 .TimeBlock .event {
 	width: 200px;
-	margin-right: 10px;
+	margin-right: 10px;	
 }
 
 .TimeBlock .event-start {
 	border-top-right-radius: 10px;
-}
-
-.TimeBlock .event-end {
-
+	border-bottom-right-radius: 10px;
 }
 
 .TimeBlock .event-content {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: #DFE0E2;
+	background: rgba(223,224,226, 0.9);
 	border-left: 5px solid #23B5D3;
 	color: #4C5760;
+	position: relative;
+	z-index: 99;
 }
 
 .TimeBlock .empty-event {
