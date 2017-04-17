@@ -13,4 +13,4 @@
 ![](http://i.imgur.com/Z5Ky3ub.png)
 
 ### Live Running Version on Heroku:
-[Here](https://www.dayscheduler.herokuapp.com)
+[Here](https://dayscheduler.herokuapp.com)
