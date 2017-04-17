@@ -1,0 +1,18 @@
+.DayHeader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 3.75em;
+	background: #4C5760;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 2;
+	color: #FFF;
+}
+
+.DayHeader h1 {
+	font-weight: 400;
+	font-size: 1.75em;
+}

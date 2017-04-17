@@ -5,17 +5,13 @@ import '../styles/TimeBlockList.css';
 const TimeBlockList = ({timeBlocks}) => {
 	function renderTimeBlocks(timeBlocks) {
 		return timeBlocks.map((timeBlock, index) => {
-			return (
-				<TimeBlock key={index} timeBlock={timeBlock} />
-			);
+			return <TimeBlock key={index} timeBlock={timeBlock} />;
 		});
 	}
 
 	return (
 		<div className="TimeBlockList">
-			<ul>
-				{renderTimeBlocks(timeBlocks)}
-			</ul>
+			<ul>{renderTimeBlocks(timeBlocks)}</ul>
 		</div>
 	);
 }

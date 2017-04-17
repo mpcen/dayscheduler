@@ -34,15 +34,14 @@ class DaySchedule extends Component {
 				events: []
 			});
 
-		//process any events that were predefined from an external source (ex: included json file)
+		// Sort (in-place) predefined events in ascending order of end time.
 		prescheduledEvents.sort((eventA, eventB) => {
-			if(Number(eventA.end.replace(':', '.')) === Number(eventB.end.replace(':', '.'))) {
+			if(Number(eventA.end.replace(':', '.')) === Number(eventB.end.replace(':', '.')))
 				return Number(eventA.start.replace(':', '.')) - Number(eventB.start.replace(':', '.'));
-			}
 			return Number(eventA.end.replace(':', '.')) - Number(eventB.end.replace(':', '.'));
-		})
+		});
 
-
+		//process any events that were predefined from an external source (ex: included json file)
 		prescheduledEvents.forEach(preScheduledEvent => {
 			const
 				eventStart = moment(preScheduledEvent.start, 'HH:mm'),
@@ -83,9 +82,7 @@ class DaySchedule extends Component {
 	}
 
 	render() {
-		return (
-			<TimeBlockList timeBlocks={this.state.timeBlocks} />
-		);	
+		return <TimeBlockList timeBlocks={this.state.timeBlocks} />;	
 	}
 }
 

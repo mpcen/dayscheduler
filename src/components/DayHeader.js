@@ -4,12 +4,12 @@ import '../styles/DayHeader.css';
 
 const DayHeader = ({date}) => {
 	function formatDate(date) {
-		return moment(date, "ddd MMM D YYYY").format("dddd, MMMM D, YYYY")
+		return moment(date, "ddd MMM D YYYY").format("dddd, MMMM D, YYYY");
 	}
 
 	return (		
-		<div className="DayHeader-Container">
-			{formatDate(date)}
+		<div className="DayHeader">
+			<h1>{formatDate(date)}</h1>
 		</div>
 	);
 }

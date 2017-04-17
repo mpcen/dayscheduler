@@ -2,10 +2,10 @@ import React from 'react';
 import moment from 'moment';
 import '../styles/TimeBlock.css';
 
-
 const TimeBlock = ({timeBlock}) => {
-	let minute = `minute-${moment(timeBlock.time).format('mm').toString()}`;
-	let timeBlockClass = `TimeBlock ${minute}`;
+	let
+		minute = `minute-${moment(timeBlock.time).format('mm').toString()}`,
+		timeBlockClass = `TimeBlock ${minute}`;
 
 	function renderTimeBlock(timeBlock) {
 		if(timeBlock.events.length)			

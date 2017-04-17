@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../styles/App.css';
 import eventData from '../data/eventData.json'
 
 import Day from './Day';
@@ -7,7 +6,7 @@ import Day from './Day';
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div>
       	<Day eventData={eventData} />
       </div>
     );

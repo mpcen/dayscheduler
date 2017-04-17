@@ -2,13 +2,13 @@ import React from 'react';
 import DayHeader from './DayHeader';
 import DaySchedule from './DaySchedule';
 
-const Day = (props) => {
+const Day = ({eventData}) => {
 	return (
 		<div>
-			<DayHeader date={props.eventData.date} />
+			<DayHeader date={eventData.date} />
 			<DaySchedule
-				prescheduledEvents={props.eventData.events}
-				date={props.eventData.date}
+				prescheduledEvents={eventData.events}
+				date={eventData.date}
 			/>
 		</div>
 	);

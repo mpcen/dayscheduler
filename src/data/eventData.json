@@ -2,11 +2,6 @@
     "date": "Wed Mar 10 2027",
     "events": [
         {
-            "title": "TEST",
-            "start": "01:30",
-            "end": "23:15"
-        },
-        {
             "title": "Coffee with Alice",
             "start": "09:00",
             "end": "10:00"
@@ -25,7 +20,7 @@
             "title": "Lunch with Carol",
             "start": "12:00",
             "end": "13:00"
-        },        
+        },
         {
             "title": "Meeting 1",
             "start": "14:00",
@@ -40,11 +35,11 @@
             "title": "Meeting 3",
             "start": "15:30",
             "end": "16:30"
-        },                  
+        },
         {
             "title": "Drinks With Dan",
             "start": "18:00",
             "end": "19:00"
-        }              
+        }
     ]
 }
