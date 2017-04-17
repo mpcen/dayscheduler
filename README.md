@@ -9,7 +9,8 @@
 	- Google Chrome 57.0.2987.133 (64-bit)
 
 ### Screenshot:
-![Screenshot](http://imgur.com/a/kS86b)
+
+![](http://i.imgur.com/Z5Ky3ub.png)
 
 ### Live Running Version on Heroku:
-	- [DayScheduler](https://dayscheduler.herokuapp.com/)
+	[](https://dayscheduler.herokuapp.com)
